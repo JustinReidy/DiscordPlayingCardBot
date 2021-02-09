@@ -5,9 +5,6 @@ module.exports = {
     description: "Bid on what a specific stock is going to do today",
     usage: "[Ticker] [End of Day Price]",
     execute(message, args){
-
-        const tempLink = "http://localhost:8080/stockMarket"
-
         const userId = message.author.id
         const username = message.author.username
         
@@ -21,13 +18,13 @@ module.exports = {
             bid: bid
         }
 
-        axios.post(tempLink, savedData)
+        axios.post(process.env.BACKEND_API_URL, savedData)
         .then(res => {
             message.reply(`Your bid for ${ticker} has been saved, please check to see if you were correct at the end of the trading day!`)
         })
         .catch(err => {
             console.log(err)
-            message.reply("Something went a bit fucky, ask Justin to check the log")
+            message.reply("Something went a bit fucky, ask Justin to check the log") 
         })
         
     }

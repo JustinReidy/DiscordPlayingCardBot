@@ -2,17 +2,17 @@ const axios = require('axios')
 
 module.exports = {
     name: "deletebid",
+    aliases:["deletebids"],
     description: "Deletes your current bids",
     usage: '[number]',
     execute(message, args){
         const userId = message.author.id
         let numToDelete = args[0]
-        const tempLink = 'http://localhost:8080/stockmarket'
 
         for (let i = 0; i < numToDelete; i++){
-            axios.delete(`${tempLink}/${userId}`)
+            axios.delete(`${process.env.BACKEND_API_URL}/${userId}`)
             .then(res => {
-                console.log(`i: ${i} num: ${numToDelete}`)
+                
             }) 
             .catch(err => {
                 console.log(err)
@@ -32,4 +32,4 @@ module.exports = {
         // }
 
     }
-}
+} 
