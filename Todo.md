@@ -16,5 +16,5 @@
         - [x] Need to find a solution for ```forEach()``` over the ```res.data``` and push both the original bid **AND** the closing/current price of the ticker. 
 - [ ] See options for blocking channel advertisments
 - [x] Refuse commands that don't exist
-- [ ] Add support for Crypto quotes
+- [x] Add support for Crypto quotes
 
