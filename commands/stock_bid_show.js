@@ -18,7 +18,7 @@ module.exports = {
             if(today.getDay() === 6 || today.getDay() === 0) return message.reply("It is the weekend, please check back at 4pm Monday(Unless bank holiday) to see how your bets did!")
 
             // Check to see if the market has closed for the day(4pm EST)
-            if(today.getHours() < 15) return message.reply("The stock market has not closed for the day yet, please check back at 4pm EST")
+            if( /*Chekck if before market open*/  today.getHours() > 8 && /*Check if after market close*/today.getHours() < 15) return message.reply("The stock market has not closed for the day yet, please check back at 4pm EST")
 
             const objs = []
 
