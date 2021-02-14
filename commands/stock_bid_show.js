@@ -11,9 +11,19 @@ module.exports = {
         axios.get(`${process.env.BACKEND_API_URL}/${userId}`)
         .then(res => {
 
+            let today = new Date()
+            console.log(today)
+
+            // Check to see if it is the Weekend
+            if(today.getDay() === 6 || today.getDay() === 0) return message.reply("It is the weekend, please check back at 4pm Monday(Unless bank holiday) to see how your bets did!")
+
+            // Check to see if the market has closed for the day(4pm EST)
+            if(today.getHours() < 15) return message.reply("The stock market has not closed for the day yet, please check back at 4pm EST")
+
             const objs = []
 
             const { data } = res
+
 
             const promise = new Promise((resolve, reject) => {
                 data.forEach(bid => {  

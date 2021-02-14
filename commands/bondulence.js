@@ -4,6 +4,7 @@ module.exports = {
     description: "Dispatch a bondulance",
     cooldown: 10,
     execute(message, args) {
+
         message.channel.send({embed: {
             title: "Bondulence has been dispatched",
             image:{

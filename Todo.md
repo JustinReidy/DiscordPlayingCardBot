@@ -3,9 +3,10 @@
 - [ ] Get Prune Working [StackOverflow](www.stackoverflow.com/questions/41574971/how-does-bulkdelete-work)
     - ```js 
         message.channel.bulkDelete()
-- [ ] Look into what other commands might be wanted for stock market data
-    - [ ] For ```!showbid```  display wether they were correct or incorrect.
-        - [ ] Determine if stock market is still open or has closed
+- [ ] Look into what other commands might be wanted for stock market data *Waiting on call with Keef*
+    - [x] For ```!showbid```  display wether they were correct or incorrect.
+        - [x] Determine if stock market is still open or has closed
+            - [x] Determine if it is the weekend
 - [x] Look into replaceing ```message.reply``` with embeds
     - [x] Logo when symbol is given ```const profile = `https://finnhub.io/api/v1/stock/profile2?symbol=${ticker}&token=${token}` ```
     - [x] replace ```message.reply``` on ``` stock_quotes```
