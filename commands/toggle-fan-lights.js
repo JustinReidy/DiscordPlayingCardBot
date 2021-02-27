@@ -8,7 +8,7 @@ module.exports = {
     cooldown: 30,
     usage: "<On:Off>",
     execute(message, args){
-        const isSetTrue = (args[0].toUpperCase() == "TRUE")
+        const isSetTrue = (args[0].toUpperCase() == "ON")
 
         // console.log(isSetTrue)
         const ids = [1, 2, 3]
