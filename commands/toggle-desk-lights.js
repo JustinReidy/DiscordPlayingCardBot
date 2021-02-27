@@ -5,7 +5,7 @@ module.exports = {
     name:"toggledesklights",
     description: "Toggle the lights in my desk lamp, On or Off",
     aliases: ["desk"],
-    cooldown: 30,
+    // cooldown: 30,
     usage: "<On:Off>",
     execute(message, args){
         const isSetTrue = (args[0].toUpperCase() == "ON")
