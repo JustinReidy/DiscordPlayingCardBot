@@ -11,7 +11,7 @@ module.exports = {
         
         if(!user) return message.reply("We can't find that user")
 
-        if(num > 20) return message.reply("Please choose a number less than 20, fuck face")
+        // if(num > 100) return message.reply("Please choose a number less than 20, fuck face")
 
         for(let i = 0; i < num; i++){
             console.log(i)
