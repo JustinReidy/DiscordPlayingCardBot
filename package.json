@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "nodemon index.js",
+
+  "nodemonConfig": {
+    "ignore": ["./commandlog.json"]
+  },
   "scripts": {
     "main": "nodemon index.js"
   },
