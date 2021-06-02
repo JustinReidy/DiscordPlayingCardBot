@@ -30,7 +30,8 @@ module.exports = {
             const sat = 200
             const bri = 175
 
-        	controlLight(4, true, bri, hue, sat)
+        	controlLight(6, true, bri, hue, sat)
+        	controlLight(7, true, bri, hue, sat)
         }
 
 

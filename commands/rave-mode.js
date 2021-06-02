@@ -17,12 +17,12 @@ module.exports = {
         
         if(args[0] > 150) return message.reply("Hey fuckface, pick a smaller damn number")
 
-        const controlLight = (on, bri, hue, sat) => {
+        const ids = [6, 7]
+
+        const controlLight = (lightId, on, bri, hue, sat) => {
             
-            
-            sleep(2000)
             axios.put(
-                `http://${process.env.HUE_BRIDGE_IP}/api/${process.env.HUE_USERNAME}/lights/4/state`, 
+                `http://${process.env.HUE_BRIDGE_IP}/api/${process.env.HUE_USERNAME}/lights/${lightId}/state`, 
                 {
                     on,
                     ... ( bri && { bri } ),
@@ -48,11 +48,15 @@ module.exports = {
             for(let i = 0; i < time; i++){
                 
                 
-                const hue = Math.floor(Math.random() * 65535) + 1
-                const sat = Math.floor(Math.random() * 254) + 1
-                const bri = 254
+                const hue1 = Math.floor(Math.random() * 65535) + 1
+                const sat1 = Math.floor(Math.random() * 254) + 1
+                const hue2 = Math.floor(Math.random() * 65535) + 1
+                const sat2 = Math.floor(Math.random() * 254) + 1
+                const bri = 255
                 
-                controlLight(true, bri, hue, sat)
+                controlLight(6, true, bri, hue1, sat1)
+                controlLight(7, true, bri, hue1, sat1)
+                // controlLight(7, true, bri, hue2, sat2)
                 await sleep(1500)
                 
             }

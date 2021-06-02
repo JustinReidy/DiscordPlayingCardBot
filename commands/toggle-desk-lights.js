@@ -22,7 +22,8 @@ module.exports = {
 
         const isSetTrue = (args[0].toUpperCase() == "ON")
         
-        const ids = [4, 5]
+        // const ids = [4, 5]
+        const ids = [6, 7]
 
         const controlLight = async(lightId, on, bri, hue, sat) => {
 
